@@ -1,0 +1,15 @@
+version: 0.2
+
+phases:
+  build:
+    commands:
+      - echo "Building the project"
+      - mkdir -p /var/www/html # Create a directory to store the web files
+      - cp index.html /var/www/html # Copy the index.html file to the web directory
+  post_build:
+    commands:
+      - echo "Deploying the project"
+      - ls -al /var/www/html # List the files in the web directory for debugging purposes
+artifacts:
+  files:
+    - '**/*'
